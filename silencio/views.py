@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 def get_data(request):
     obj1 = {
@@ -10,15 +11,28 @@ def get_data(request):
     "weight" : float(61.8)
     }
     obj2 = {
-    "name" : "Monu Chaudhary",
+    "name" : "Sonia Kauhsik",
     "roll_no" : 2014120,
     "college" : "IIIT Delhi",
-    "weight" : float(64.8)
+    "weight" : float(48)
     }
     obj3 = {
-    "name" : "Shrishtee Gupta",
+    "name" : "Manisha Gupta",
     "roll_no" : 2014118,
     "college" : "IIIT Delhi",
     "weight" : float(49.8)
     }
     return HttpResponse(json.dumps([obj1, obj2, obj3]))
+
+
+@csrf_exempt
+def post_data(request):
+    if request.method == "POST":
+        data = json.loads(request.POST.get('data'))
+        print data['username']
+        return HttpResponse("got it")
+    else:
+        return HttpResponse("didnt get post data")
+
+
+# curl -H "Content-Type: application/x-www-form-urlencoded" -X POST --data data='{"username":"xyz","password":"xyz"}' http://127.0.0.1:8000/silencio/post/
