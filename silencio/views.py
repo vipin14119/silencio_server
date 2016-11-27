@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
+from silencio.models import Record
 
 def get_data(request):
     obj1 = {
@@ -28,9 +29,11 @@ def get_data(request):
 @csrf_exempt
 def post_data(request):
     if request.method == "POST":
+        names = str(request.POST.get("name"))
+        Record(name=names, db_level=24).save()
         # data = json.loads(request.POST.get('data'))
         # print data['username']
-        return HttpResponse("got it")
+        return render(request, 'silencio/index.html', {'request_data': request.POST})
     else:
         return HttpResponse("didnt get post data")
 
