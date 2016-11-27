@@ -6,5 +6,5 @@ class Record(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     db_level = models.FloatField()
 
-    def __init__(self):
+    def __str__(self):
         return self.name + " : "+ str(self.db_level)
