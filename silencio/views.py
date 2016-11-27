@@ -29,7 +29,7 @@ def get_data(request):
 @csrf_exempt
 def post_data(request):
     if request.method == "POST":
-        names = str(request.POST.get("name"))
+        names = str(request.POST)
         Record(name=names, db_level=24).save()
         # data = json.loads(request.POST.get('data'))
         # print data['username']
