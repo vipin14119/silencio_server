@@ -30,7 +30,8 @@ def get_data(request):
 def post_data(request):
     if request.method == "POST":
         names = str(request.POST.get("name"))
-        Record(name=names, db_level=24).save()
+        db_level = float(request.POST.get("db_level"))
+        Record(name=names, db_level=db_level).save()
         # data = json.loads(request.POST.get('data'))
         # print data['username']
         return render(request, 'silencio/index.html', {'request_data': request.POST})
