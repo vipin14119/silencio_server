@@ -28,8 +28,8 @@ def get_data(request):
 @csrf_exempt
 def post_data(request):
     if request.method == "POST":
-        data = json.loads(request.POST.get('data'))
-        print data['username']
+        # data = json.loads(request.POST.get('data'))
+        # print data['username']
         return HttpResponse("got it")
     else:
         return HttpResponse("didnt get post data")
