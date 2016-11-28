@@ -12,9 +12,11 @@ class User(models.Model):
 
 class Record(models.Model):
     user = models.ForeignKey(User)
-    name = models.CharField(max_length=1000)
-    created_at = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=100)
     db_level = models.FloatField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name + " : " + str(self.db_level)
