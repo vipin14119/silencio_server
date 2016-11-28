@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
-from silencio.models import Record
+from silencio.models import Record, User
 
 def get_data(request):
     obj1 = {
@@ -44,5 +44,27 @@ def get_csrf_token(request):
     return HttpResponse("GOT NEW CSRF")
 
 
+def signup(request):
+    if request.method == 'POST':
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        User(username=username, password=password).save()
+        return HttpResponse("1")
+    else:
+        return HttpResponse("-1")
 
-# curl -H "Content-Type: application/x-www-form-urlencoded" -X POST --data data='{"username":"xyz","password":"xyz"}' http://127.0.0.1:8000/silencio/post/
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        if User.objects.filter(username=username, password=password).exists():
+            return HttpResponse("1")
+        else:
+            return HttpResponse("-1")
+    else:
+        return HttpResponse("0")
+
+
+# curl -H "Content-Type: application/x-www-form-urlencoded" -X POST --data data='{"username":"xyz","password":"xyz"}'
+#  http://127.0.0.1:8000/silencio/post/
