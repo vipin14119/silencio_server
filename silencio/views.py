@@ -21,6 +21,7 @@ PARAMETERS_INCORRECT = 8
 DATETIME_FORMAT_ERROR = 9
 SUCCESS_MSG = 'RECORD CREATED SUCCESSFULLY'
 WRONG_METHOD = 'ITS NOT THE CORRECT METHOD FOR THIS URL'
+LOCATION_DOESNT_EXIST = 10
 
 def get_data(request):
     obj1 = {
@@ -61,7 +62,7 @@ def post_record_bundle(request):
     if request.method == "POST":
         try:
             username = request.POST.get("username")
-            place = request.POST.get("place")
+            location = request.POST.get("location")
             start_time = request.POST.get("start_time")
             end_time = request.POST.get("end_time")
             db_level = float(request.POST.get("db_level"))
@@ -72,11 +73,15 @@ def post_record_bundle(request):
         except:
             return HttpResponse(USERNAME_DOESNT_EXIST)
         try:
+            location = Location.objects.get(name=location)
+        except;
+        return HttpResponse(LOCATION_DOESNT_EXIST)
+        try:
             start_time = datetime.datetime.strptime(start_time, "%Y/%m/%d %H:%M:%S")
             end_time = datetime.datetime.strptime(end_time, "%Y/%m/%d %H:%M:%S")
         except:
             return HttpResponse(DATETIME_FORMAT_ERROR)
-        record = Record(user=user, name=place, db_level=db_level, start_time=start_time, end_time=end_time)
+        record = Record(user=user, location=location, db_level=db_level, start_time=start_time, end_time=end_time)
         record.save()
         return HttpResponse(SUCCESS_MSG)
     else:
