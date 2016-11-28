@@ -51,6 +51,7 @@ def get_csrf_token(request):
     return HttpResponse("GOT NEW CSRF")
 
 
+@csrf_exempt
 def signup(request):
     if request.method == 'POST':
         username = request.POST.get("username")
@@ -61,6 +62,7 @@ def signup(request):
         return HttpResponse(BAD_FLAG)
 
 
+@csrf_exempt
 def login(request):
     if request.method == 'POST':
         username = request.POST.get("username")
