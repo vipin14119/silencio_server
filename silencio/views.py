@@ -44,6 +44,7 @@ def post_record_bundle(request):
         # data = json.loads(request.POST.get('data'))
         # print data['username']
         return render(request, 'silencio/index.html', {
+        'user': user
         'start': start_time,
         'end': end_time
         })
