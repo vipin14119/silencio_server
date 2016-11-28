@@ -3,7 +3,6 @@ from silencio.models import Record, User
 
 
 class UserClass(admin.ModelAdmin):
-    list_display = 'username'
 
     class Meta:
         model = User
