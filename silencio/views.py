@@ -32,11 +32,13 @@ def get_data(request):
 
 
 @csrf_exempt
-def post_record(request):
+def post_record_bundle(request):
     if request.method == "POST":
         username = request.POST.get("username")
         user = User.objects.get(username=username)
-        place = request.POST.get("name")
+        place = request.POST.get("place")
+        start_time = request.POST.get("start_time")
+        end_time = request.POST.get("end_time")
         db_level = float(request.POST.get("db_level"))
         Record(user=user, name=place, db_level=db_level).save()
         # data = json.loads(request.POST.get('data'))
