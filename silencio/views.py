@@ -43,11 +43,12 @@ def post_record_bundle(request):
         # Record(user=user, name=place, db_level=db_level, start_time=start_time, end_time=end_time).save()
         # data = json.loads(request.POST.get('data'))
         # print data['username']
-        return render(request, 'silencio/index.html', {
-        'user': user,
-        'start': start_time,
-        'end': end_time
-        })
+        return HttpResponse(start_time)
+        # return render(request, 'silencio/index.html', {
+        # 'user': user,
+        # 'start': start_time,
+        # 'end': end_time
+        # })
     else:
         return HttpResponse("didnt get post data")
 
