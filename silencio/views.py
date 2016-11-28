@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from silencio.models import Record, User
+import datetime
 
 OK_FLAG = "1"
 NOTOK_FLAG = "0"
