@@ -74,8 +74,8 @@ def post_record_bundle(request):
             return HttpResponse(USERNAME_DOESNT_EXIST)
         try:
             location = Location.objects.get(name=location)
-        except;
-        return HttpResponse(LOCATION_DOESNT_EXIST)
+        except:
+            return HttpResponse(LOCATION_DOESNT_EXIST)
         try:
             start_time = datetime.datetime.strptime(start_time, "%Y/%m/%d %H:%M:%S")
             end_time = datetime.datetime.strptime(end_time, "%Y/%m/%d %H:%M:%S")
