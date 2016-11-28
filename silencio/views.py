@@ -40,6 +40,8 @@ def post_record_bundle(request):
         start_time = request.POST.get("start_time")
         end_time = request.POST.get("end_time")
         db_level = float(request.POST.get("db_level"))
+        start_time = datetime.datetime.strptime(start_time, "%Y/%m/%d %H:%M:%S")
+        end_time = datetime.datetime.strptime(end_time, "%Y/%m/%d %H:%M:%S")
         # Record(user=user, name=place, db_level=db_level, start_time=start_time, end_time=end_time).save()
         # data = json.loads(request.POST.get('data'))
         # print data['username']
