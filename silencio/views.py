@@ -56,6 +56,15 @@ def get_locations(request):
         })
     return HttpResponse(json.dumps(location_json))
 
+@csrf_exempt
+def post_location(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        mac = request.POST.get("mac")
+        Location(name=name, mac=mac).save()
+        return HttpResponse("1")
+    else:
+        return HttpResponse("0")
 
 @csrf_exempt
 def post_record_bundle(request):
