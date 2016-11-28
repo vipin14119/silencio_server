@@ -27,4 +27,4 @@ class Record(models.Model):
     created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.location + " : " + str(self.db_level)
+        return self.location.name + " : " + str(self.db_level)
