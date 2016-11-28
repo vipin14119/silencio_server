@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
-from silencio.models import Record, User
+from silencio.models import Record, User, Location
 import datetime
 
 # Login Return Values
@@ -42,6 +42,18 @@ def get_data(request):
         "weight": float(49.8)
     }
     return HttpResponse(json.dumps([obj1, obj2, obj3]))
+
+
+def get_locations(request):
+    locations = Location.objects.all()
+    location_json = []
+    for location in locations:
+        location_json.append({
+        'name': location.name,
+        'mac': location.mac,
+        'db': 56
+        })
+    return HttpResponse(json.dumps(location_json))
 
 
 @csrf_exempt

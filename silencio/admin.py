@@ -10,6 +10,7 @@ admin.site.register(User, UserClass)
 
 
 class LocationClass(admin.ModelAdmin):
+    list_display = ('name', 'mac')
 
     class Meta:
         model = Location
