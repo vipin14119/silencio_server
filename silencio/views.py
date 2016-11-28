@@ -40,7 +40,7 @@ def post_record_bundle(request):
         start_time = request.POST.get("start_time")
         end_time = request.POST.get("end_time")
         db_level = float(request.POST.get("db_level"))
-        Record(user=user, name=place, db_level=db_level).save()
+        Record(user=user, name=place, db_level=db_level, start_time=start_time, end_time=end_time).save()
         # data = json.loads(request.POST.get('data'))
         # print data['username']
         return HttpResponse(OK_FLAG)
