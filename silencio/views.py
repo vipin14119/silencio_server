@@ -51,7 +51,7 @@ def get_locations(request):
         location_json.append({
         'name': location.name,
         'mac': location.mac,
-        'db': 56
+        'db': str(56)
         })
     return HttpResponse(json.dumps(location_json))
 
