@@ -49,20 +49,24 @@ def get_locations(request):
     locations = Location.objects.all()
     location_json = []
     for location in locations:
+        data = get_records(location.name)
         location_json.append({
         'name': location.name,
         'mac': location.mac,
-        'db': str(56),
-        'records': get_records(location.name)
+        'db': str(data[0]),
+        'records': data[1]
         })
     return HttpResponse(json.dumps(location_json))
 
 def get_records(location_name):
     records = Record.objects.filter(location__name=location_name)
     list = []
+    avg = 0
     for record in records:
+        avg += record.db_level
         list.append(record.db_level)
-    return list
+    avg /= len(records)
+    return (avg, list)
 
 @csrf_exempt
 def post_location(request):
