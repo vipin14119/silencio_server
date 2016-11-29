@@ -65,7 +65,8 @@ def get_records(location_name):
     for record in records:
         avg += record.db_level
         list.append(record.db_level)
-    avg /= len(records)
+    if len(record) != 0
+        avg /= len(records)
     return (avg, list)
 
 @csrf_exempt
