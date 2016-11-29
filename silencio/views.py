@@ -54,6 +54,11 @@ def get_locations(request):
         'mac': location.mac,
         'db': str(56)
         })
+    list = [{
+    "name": "vipin",
+    "mac": "asda",
+    "db": str(asda)
+    }]
     return HttpResponse(json.dumps(location_json))
 
 @csrf_exempt
