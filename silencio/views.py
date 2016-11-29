@@ -62,7 +62,7 @@ def get_records(location_name):
     list = []
     for record in records:
         list.append(record.db_level)
-    return HttpResponse(json.dumps(list))
+    return list
 
 @csrf_exempt
 def post_location(request):
