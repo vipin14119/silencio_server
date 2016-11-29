@@ -57,7 +57,7 @@ def get_locations(request):
     list = [{
     "name": "vipin",
     "mac": "asda",
-    "db": str(asda)
+    "db": str("12")
     }]
     return HttpResponse(json.dumps(location_json))
 
