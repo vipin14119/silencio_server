@@ -1,28 +1,33 @@
-Boys Hostel Sixth Floor C WING == c4:0a:cb:2d:d5:8a
-Boys Hostel Sixth Floor C WING == 2c:3e:cf:8e:de:ea
-Boys Hostel Sixth Floor C WING == c4:0a:cb:2d:ce:3a
-Canteen == c4:0a:cb:2d:84:07
-Canteen == c4:0a:cb:25:ff:58
-Canteen == c4:0a:cb:25:ff:57
-Irisys Lab == 2c:3e:cf:ca:ec:a7
-Irisys Lab == ec:e1:a9:86:eb:15
-Canteen == c4:0a:cb:5c:10:e8
-Mess == c4:0a:cb:2d:c4:88
-Mess == c4:0a:cb:2d:c4:87
-Canteen == c4:0a:cb:5c:10:e7
-Canteen == c4:0a:cb:2c:fa:d7
+SC MTech CSE Lab == 2c:3e:cf:8f:4e:e7
+SC Lab 203 == c4:0a:cb:2d:84:e8
+SC Sports Room == c4:0a:cb:5c:03:28
+SC Gym == c4:0a:cb:25:96:5a
+SC Music Room == c4:0a:cb:5c:03:27
+SC Canteen == c4:0a:cb:2d:84:07
+SC Canteen == c4:0a:cb:25:ff:58
+SC Canteen == c4:0a:cb:25:ff:57
+SC Irisys Lab == 2c:3e:cf:ca:ec:a7
+SC Irisys Lab == ec:e1:a9:86:eb:15
+SC Canteen == c4:0a:cb:5c:10:e8
+SC Mess == c4:0a:cb:2d:c4:88
+SC Mess == c4:0a:cb:2d:c4:87
+SC Canteen == c4:0a:cb:5c:10:e7
+SC Canteen == c4:0a:cb:2c:fa:d7
 Library Ground Floor == c4:0a:cb:2d:95:a8
 Library Ground Floor == c4:0a:cb:2d:95:a8
 Library Ground Floor == c4:0a:cb:25:b5:57
 Library First Floor == c4:0a:cb:5c:11:f8
-Lab 21 == c4:0a:cb:25:b7:68
-Lab 21 == b0:00:b4:20:6b:f8
-Lab 22 == 2c:3e:cf:b6:be:a7
-Lab 23 == c4:0a:cb:2d:a4:18
-Lab 23 == 2c:3e:cf:4a:de:28
-Lab 31 == c4:0a:cb:2d:61:3a
-Lab 32 == c4:0a:cb:25:e6:3a
-Lab 33 == c4:0a:cb:25:b1:a5
+Lab L21 == c4:0a:cb:25:b7:68
+Lab L21 == b0:00:b4:20:6b:f8
+Lab L22 == 2c:3e:cf:b6:be:a7
+Lab L23 == c4:0a:cb:2d:a4:18
+Lab L23 == 2c:3e:cf:4a:de:28
+Lab L31 == c4:0a:cb:2d:61:3a
+Lab L32 == c4:0a:cb:25:e6:3a
+Lab L33 == c4:0a:cb:25:b1:a5
+Boys Hostel Sixth Floor C WING == c4:0a:cb:2d:d5:8a
+Boys Hostel Sixth Floor C WING == 2c:3e:cf:8e:de:ea
+Boys Hostel Sixth Floor C WING == c4:0a:cb:2d:ce:3a
 Boys Hostel Ground Floor C Wing == c4:0a:cb:5c:20:ea
 Boys Hostel Ground Floor C Wing == c4:0a:cb:25:c8:1a
 Boys Hostel Common Room == 2c:3e:cf:b6:c0:55
@@ -54,14 +59,9 @@ Boys Hostel Sixth Floor A Wing == 64:a0:e7:91:43:9a
 Boys Hostel Fifth Floor C Wing == c4:0a:cb:2d:dd:ca
 Boys Hostel Fifth Floor C Wing == c4:0a:cb:25:ff:7a
 Girls Hostel Common Room == 00:08:30:01:9a:55
-MTech CSE Lab == 2c:3e:cf:8f:4e:e7
-Lab 203 == c4:0a:cb:2d:84:e8
-Sports Room == c4:0a:cb:5c:03:28
-Gym == c4:0a:cb:25:96:5a
-Music Room == c4:0a:cb:5c:03:27
 Academic Block Entrance == 84:b8:02:f3:ef:a7
-CDX == c4:0a:cb:2d:97:18
-CDX == c4:0a:cb:5c:0b:f8
+Academic Block CDX == c4:0a:cb:2d:97:18
+Academic Block CDX == c4:0a:cb:5c:0b:f8
 Academic Block Lecture Halls Ground Floor == c4:0a:cb:5c:14:c7
 Academic Block Lecture Halls First Floor == c4:0a:cb:25:f2:d8
 Academic Block B Wing First Floor == c4:0a:cb:2d:ce:88
