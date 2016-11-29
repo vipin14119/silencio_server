@@ -87,7 +87,7 @@ def post_record_bundle(request):
         except:
             return HttpResponse(USERNAME_DOESNT_EXIST)
         try:
-            location = Location.objects.get(name=location)
+            location = Location.objects.filter(name=location)[0]
         except:
             return HttpResponse(LOCATION_DOESNT_EXIST)
         try:
