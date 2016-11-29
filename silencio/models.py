@@ -11,7 +11,7 @@ class User(models.Model):
 
 
 class Location(models.Model):
-    name = models.CharField(max_length=100, null=False, blank=False, unique=True)
+    name = models.CharField(max_length=100, null=False, blank=False)
     mac = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
