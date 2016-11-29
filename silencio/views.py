@@ -52,7 +52,7 @@ def get_locations(request):
         location_json.append({
         'name': location.name,
         'mac': location.mac,
-        'db': str(56)
+        'db': str(56),
         'records': get_records(location.name)
         })
     return HttpResponse(json.dumps(location_json))
