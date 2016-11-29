@@ -53,13 +53,16 @@ def get_locations(request):
         'name': location.name,
         'mac': location.mac,
         'db': str(56)
+        'records': get_records(location.name)
         })
-    list = [{
-    "name": "vipin",
-    "mac": "asda",
-    "db": str("12")
-    }]
     return HttpResponse(json.dumps(location_json))
+
+def get_records(location_name):
+    records = Record.objects.filter(location__name=location_name)
+    list = []
+    for record in records:
+        list.append(record.db_level)
+    return HttpResponse(json.dumps(list))
 
 @csrf_exempt
 def post_location(request):
